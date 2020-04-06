@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package proto;
+
+message Request {
+    string toManipulate = 1;
+}
+
+message Response {
+    string manipulated = 1;
+}
+
+service ManipulateService {
+    rpc Reverse(Request) returns (Response);
+    rpc NextInASCII(Request) returns (Response);
+    rpc PreviousInASCII(Request) returns (Response);
+}
